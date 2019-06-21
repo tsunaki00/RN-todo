@@ -1,0 +1,48 @@
+version: '2'
+
+networks:
+  gchat-net:
+    driver: bridge
+
+services:
+  todo-db:
+    image : mongo:4.0.2
+    environment :
+      - 'MONGO_DATA_DIR=/data/db'
+      - 'MONGO_LOG_DIR=/dev/null'
+      - 'MONGODB_USER=gauss' 
+      - 'MONGODB_PASS=gauss'
+    volumes:
+      - './.data/mongodb:/data/db'
+    ports:
+      - '27017:27017'
+    command: mongod --smallfiles  
+    restart: always
+
+  mongo-express:
+    container_name: mongo-express
+    image: mongo-express
+    links:
+      - 'todo-db'
+    ports:
+      - '8082:8081'
+    environment:
+      - 'ME_CONFIG_OPTIONS_EDITORTHEME=default'
+      - 'ME_CONFIG_BASICAUTH_USERNAME=gauss'
+      - 'ME_CONFIG_BASICAUTH_PASSWORD=gauss'
+      - 'ME_CONFIG_MONGODB_SERVER=todo-db'
+    restart: always
+      
+  backend:
+    container_name: backend
+    build:
+      context: ./docker/backend
+    ports:
+    - "30000:3001"
+    volumes:
+      - "./backend:/app"
+    depends_on:
+      - 'todo-db'
+    links:
+      - 'todo-db'
+    restart: always
