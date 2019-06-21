@@ -1,9 +1,4 @@
 version: '2'
-
-networks:
-  gchat-net:
-    driver: bridge
-
 services:
   todo-db:
     image : mongo:4.0.2
