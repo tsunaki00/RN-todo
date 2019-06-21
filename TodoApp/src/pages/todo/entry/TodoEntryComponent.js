@@ -39,14 +39,6 @@ export default class TodoEntryComponent extends React.Component {
     this.setState({ form });
   }
 
-  _entry() {
-    this.setState({ entry : true });
-    this.props.entry({
-      title : this.state.form.title.value,
-      body    : this.state.form.body.value
-    });
-  }
-
   render() {
     return (
       <Container style={styles.container}>
@@ -87,4 +79,13 @@ export default class TodoEntryComponent extends React.Component {
       </Container>
     )
   }
+
+  _entry() {
+    this.setState({ entry : true });
+    this.props.entry({
+      title : this.state.form.title.value,
+      body    : this.state.form.body.value
+    });
+  }
+
 }

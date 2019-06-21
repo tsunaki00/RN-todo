@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Todo from './TodoDetailComponent';
+import Component from './TodoDetailComponent';
 import * as Action from './TodoDetailAction';
 
 
@@ -17,4 +17,4 @@ function mapDispatchToProps(dispatch) {
   }
   return actions;
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Todo);
+export default connect(mapStateToProps, mapDispatchToProps)(Component);
