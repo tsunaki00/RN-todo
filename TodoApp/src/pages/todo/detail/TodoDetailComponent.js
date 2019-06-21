@@ -13,12 +13,6 @@ import styles from './styles';
 export default class TodoDetailComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      form : {
-        subject : {label : 'タイトル', value : '', required  : true, error : ''},
-        body    : {label : '本文',    value : '', required  : true, error : ''},
-      }  
-    };
   }
 
   componentWillMount() {
