@@ -19,9 +19,9 @@
   "dependencies": {
     "@nest-middlewares/express-session": "^5.1.0",
     "@nestjs/common": "^5.0.0",
-    "@nestjs/core": "^5.0.0",
+    "@nestjs/core": "^9.2.1",
     "@nestjs/microservices": "^5.0.0",
-    "@nestjs/swagger": "^2.0.2",
+    "@nestjs/swagger": "^6.1.4",
     "@nestjs/testing": "^5.0.0",
     "@nestjs/typeorm": "^5.0.0",
     "@nestjs/websockets": "^5.0.0",
