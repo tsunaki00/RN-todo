@@ -27,7 +27,7 @@
     "@nestjs/websockets": "^5.0.0",
     "async-redis": "^1.1.4",
     "class-transformer": "^0.1.9",
-    "class-validator": "^0.8.5",
+    "class-validator": "^0.14.0",
     "config": "^1.30.0",
     "fs-extra": "^5.0.0",
     "glob": "^7.1.2",
